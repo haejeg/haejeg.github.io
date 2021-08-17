@@ -59,6 +59,7 @@
 }
 
 .navbar {
+    scale: 50;
     width: 85%;
     height: 15%;
     margin: auto; 
@@ -66,14 +67,39 @@
     align-items: center;
 }
 
-button {
-    font-size: 0.8vw;
-    color: rgb(59, 59, 59);
-    border: 0;
+.socialrow {
+    width: 16%;
+    height: 65%;
+    margin: auto; 
+    display: flex;
+    align-items: center;
+}
+
+a.button { 
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
     background: linear-gradient(19deg, rgb(153, 163, 196) 0%, rgba(83, 83, 83, 0) 100%);
-    outline: none;
     border-radius: 18vw;
     padding: 0.3vw 1vw;
+    color: rgb(59, 59, 59);
+    outline: none;
+    font-size: 0.8vw;
+}
+
+a.social {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    color: initial;
+    background: linear-gradient(19deg, rgb(153, 163, 196) 0%, rgba(83, 83, 83, 0) 100%);
+    border-radius: 18vw;
+    padding: 0.3vw 1vw;
+    color: rgb(59, 59, 59);
+    outline: none;
+    scale: 2px;
 }
 
 .anim-typewriter {
