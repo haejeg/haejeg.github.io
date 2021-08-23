@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(17, 19, 37);
+    background: -webkit-linear-gradient(90deg, rgb(0, 0, 0) -30%, rgb(17, 19, 37) 100%);
+}
+
+
+.text_title {
+    text-align: center;
+    transform: translateY(20vw);
+    font-size: 500%;
+    background: -webkit-linear-gradient(90deg, rgb(255, 255, 255) -30%, rgb(150, 195, 255) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a.button { 
+    -webkit-appearance: button;
+    transform: translateY(20.5vw);
+    text-decoration:none;
+    -moz-appearance: button;
+    appearance: button;
+    background: transparent;
+    border: 0.1vw solid #96c3ff;
+    border-radius: 18vw;
+    padding: 0.3vw 1vw;
+    color: rgb(255, 255, 255);
+    font-size: 120%;
+    animation-delay: 1s;
+}
+
+.anim-fadein {
+    animation: fadein 2s steps(50) 0.01s 1 normal both;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
