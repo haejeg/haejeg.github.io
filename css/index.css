@@ -1,0 +1,27 @@
+.navbar {
+    /* padding */
+    padding: 10px;
+
+}
+
+
+a {
+    border: #e3c7c5;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    color: #e3c7c5;
+    text-decoration: none;
+}
+a:active {
+    color: #e3c7c5;
+    text-decoration: none;
+}
+a:visited {
+    color: #000;
+    text-decoration: none;
+}

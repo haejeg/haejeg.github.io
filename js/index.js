@@ -32,7 +32,7 @@ var rainInterval = setInterval(function() {
         rain.splice(i, 1);
     }
 }
-}, 100 / 60);
+}, 1 / ctx.canvas.width);
 
 // Moving title for the extra fancies
 var title = document.getElementById("title");
@@ -59,13 +59,15 @@ titleCtx.canvas.style.height = '100%';
 var text = "haejeg";
 var textLength = text.length;
 var textIndex = 0;
+var textCompletion = false;
 var textInterval = setInterval(function() {
     titleCtx.clearRect(0, 0, titleCtx.canvas.width, titleCtx.canvas.height);
     titleCtx.font = window.innerWidth / 20 + "px Montserrat";
-    titleCtx.fillStyle = "white";
+    titleCtx.fillStyle = "#e3c7c5";
     titleCtx.fillText(text.substring(0, textIndex), titleCtx.canvas.width/2 - titleCtx.measureText(text.substring(0, textIndex)).width/2, titleCtx.canvas.height/2);
     textIndex++;
     if (textIndex > textLength) {
+        textCompletion = true;
         clearInterval(textInterval);
     }
 }, 200);
