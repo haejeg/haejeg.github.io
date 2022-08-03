@@ -10,7 +10,6 @@ ctx.canvas.style.width = '100%';
 ctx.canvas.style.height = '100%';
 
 // Rain effect
-
 var rain = [];
 
 var rainInterval = setInterval(function() {
@@ -62,13 +61,12 @@ var textIndex = 0;
 var textCompletion = false;
 var textInterval = setInterval(function() {
     titleCtx.clearRect(0, 0, titleCtx.canvas.width, titleCtx.canvas.height);
-    titleCtx.font = window.innerWidth / 20 + "px Montserrat";
+    titleCtx.font = "5em Arial";
     titleCtx.fillStyle = "#e3c7c5";
-    titleCtx.fillText(text.substring(0, textIndex), titleCtx.canvas.width/2 - titleCtx.measureText(text.substring(0, textIndex)).width/2, titleCtx.canvas.height/2);
+    titleCtx.fillText(text.substring(0, textIndex), titleCtx.canvas.width/2 - titleCtx.measureText(text.substring(0, textIndex)).width/2, window.innerHeight/2);
     textIndex++;
     if (textIndex > textLength) {
         textCompletion = true;
         clearInterval(textInterval);
     }
 }, 200);
-
