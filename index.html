@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">haejeg</title>
+    <title id="title">marlin</title>
 </head>
 <body>
     <style>
@@ -19,92 +19,17 @@
         <!-- Create a new title canvas that fills up the whole screen, this is where the text will -->
         <canvas id="title-canvas" style="position: relative;" width="100%" height="100%"></canvas>
 
-        <!-- Play background music -->
-        <audio id="background-music" autoplay loop>
-            <source src="background.mp3" type="audio/mpeg">
-        </audio>
+        <!-- Create a hamburger menu -->
+        <div id="hamburger-menu" style="position: absolute; top: 0; left: 0;">
+            <div id="hamburger-menu-bar" style="position: absolute; top: 0; left: 0;">
+                <div id="hamburger-menu-bar-top" style="position: absolute; top: 0; left: 0;"></div>
+                <div id="hamburger-menu-bar-middle" style="position: absolute; top: 0; left: 0;"></div>
+                <div id="hamburger-menu-bar-bottom" style="position: absolute; top: 0; left: 0;"></div>
+            </div>
+        </div>
+        
 
-        <!-- Play sound effects -->
-        <audio id="sound-effects" autoplay loop>
-            <source src="rain.mp3" type="audio/mpeg">
-        </audio>
+        <script src="js/index.js"></script>
 
-    <script>
-        // Set scrollable to false
-        document.body.style.overflow = "hidden";
-
-        // Set up the canvas
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
-        ctx.canvas.style.width = '100%';
-        ctx.canvas.style.height = '100%';
-
-        // Lightning background effect
-
-        var rain = [];
-
-        var rainInterval = setInterval(function() {
-            rain.push({
-            x: Math.random() * ctx.canvas.width,
-            y: Math.random() * ctx.canvas.height,
-            size: Math.random() * 2 + 1,
-            speed: Math.random() * 0.5 + 0.5
-        });
-        }, 100);
-
-        var rainInterval = setInterval(function() {
-            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            for (var i = 0; i < rain.length; i++) {
-            rain[i].y += rain[i].speed;
-            ctx.fillStyle = '#646f87';
-            ctx.fillRect(rain[i].x, rain[i].y, rain[i].size, rain[i].size);
-            if (rain[i].y > ctx.canvas.height) {
-                rain.splice(i, 1);
-            }
-        }
-        }, 100 / 60);
-
-        // Moving title for the extra fancies
-        var title = document.getElementById("title");
-        var titleText = title.innerHTML;
-        var titleLength = titleText.length;
-        var titleIndex = 0;
-        var titleInterval = setInterval(function() {
-            title.innerHTML = titleText.substring(0, titleIndex);
-            titleIndex++;
-            if (titleIndex > titleLength) {
-                clearInterval(titleInterval);
-            }
-        }, 200);
-
-        // Turn down the music a little
-        var audio = document.getElementById("background-music");
-        audio.volume = 0.7;
-
-        // Set up the title canvas
-        var titleCanvas = document.getElementById('title-canvas');
-        var titleCtx = titleCanvas.getContext('2d');
-        titleCtx.canvas.width = window.innerWidth;
-        titleCtx.canvas.height = window.innerHeight;
-        titleCtx.canvas.style.width = '100%';
-        titleCtx.canvas.style.height = '100%';
-
-        // Animated text on the title canvas
-        var text = "haejeg";
-        var textLength = text.length;
-        var textIndex = 0;
-        var textInterval = setInterval(function() {
-            titleCtx.clearRect(0, 0, titleCtx.canvas.width, titleCtx.canvas.height);
-            titleCtx.font = window.innerWidth / 20 + "px Montserrat";
-            titleCtx.fillStyle = "white";
-            titleCtx.fillText(text.substring(0, textIndex), titleCtx.canvas.width/2 - titleCtx.measureText(text.substring(0, textIndex)).width/2, titleCtx.canvas.height/2);
-            textIndex++;
-            if (textIndex > textLength) {
-                clearInterval(textInterval);
-            }
-        }, 200);        
-    </script>
 </body>
 </html>
